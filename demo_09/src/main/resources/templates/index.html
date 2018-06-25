@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thymeleaf入门</title>
+</head>
+<body>
+    <span th:text="Hello"></span>
+    <hr/>
+    <span th:text="${msg}"></span>
+    <hr/>
+    <input type="text" name="username" th:value="${msg}"/>
+    <hr/>
+
+    <!--判断字符串是否为空-->
+    <!--msg为空返回true不为空返回false-->
+    <span th:text="${#strings.isEmpty(msg)}"></span>
+    <hr/>
+
+    <!--判断字符串是否包含指定的子串，包含返回true，否则返回false-->
+    <span th:text="${#strings.contains(msg,'9')}"></span>
+    <span th:text="${#strings.contains(msg,'T')}"></span>
+    <hr/>
+
+    <!--判断字符串是否以子串开头，是则返回true，否则返回false-->
+    <span th:text="${#strings.startsWith(msg,'a')}"></span>
+    <span th:text="${#strings.startsWith(msg,'T')}"></span>
+    <hr/>
+
+    <!--判断字符串是否以子串结尾-->
+    <span th:text="${#strings.endsWith(msg,'a')}"></span>
+    <span th:text="${#strings.endsWith(msg,'案例')}"></span>
+    <hr/>
+
+    <!--返回字符串长度-->
+    <span th:text="${#strings.length(msg)}"></span>
+    <hr/>
+
+    <!--查找指定子串的位置，并返回该子串的下标，如果没找到返回-1-->
+    <span th:text="${#strings.indexOf(msg,'h')}"></span>
+    <hr/>
+
+
+    <!--截取字串，用法与jdk String类下的SubString方法相同-->
+    <span th:text="${#strings.substring(msg,9)}"></span>
+    <span th:text="${#strings.substring(msg,9,12)}"></span>
+    <hr/>
+
+    <!--字符串大小写转换-->
+    <span th:text="${#strings.toUpperCase(msg)}"></span>
+    <span th:text="${#strings.toLowerCase(msg)}"></span>
+    <hr/>
+
+    <!--格式化日期，默认的以浏览器默认语言为格式化标准-->
+    <span th:text="${#dates.format(key)}"></span>
+    <hr/>
+
+    <!--格式化日期，按照自定义的格式做日期转换-->
+    <span th:text="${#dates.format(key,'yyyy/MM/dd')}"></span>
+    <hr/>
+
+    <!--格式化日期，year：取年 month：取月 day：取日-->
+    <span th:text="${#dates.year(key)}"></span>
+    <hr/>
+    <span th:text="${#dates.month(key)}"></span>
+    <hr/>
+    <span th:text="${#dates.day(key)}"></span>
+    <hr/>
+
+
+
+
+
+</body>
+</html>

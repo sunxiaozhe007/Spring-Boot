@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<table border="3">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>index</th>
+        <th>count</th>
+        <th>size</th>
+        <th>even</th>
+        <th>odd</th>
+        <th>first</th>
+        <th>last</th>
+    </tr>
+    <!--迭代遍历List-->
+    <tr th:each="list,var : ${list}">
+        <td th:text="${list.userid}"></td>
+        <td th:text="${list.username}"></td>
+        <td th:text="${list.userage}"></td>
+        <!--index:当前迭代的索引,从0开始-->
+        <td th:text="${var.index}"></td>
+        <!--count:当前迭代对象的计数,从1开始-->
+        <td th:text="${var.count}"></td>
+        <!--size:被迭代对象的长度-->
+        <td th:text="${var.size}"></td>
+        <!--even/odd:布尔值,当前循环是否是偶数/奇数,从0开始-->
+        <td th:text="${var.even}"></td>
+        <td th:text="${var.odd}"></td>
+        <!--first:布尔值,当前循环是否是第一条,是返回true,否则返回false-->
+        <td th:text="${var.first}"></td>
+        <!--last:布尔值,当前循环是否是最后一条,是返回true,否则返回false-->
+        <td th:text="${var.last}"></td>
+    </tr>
+</table>
+</body>
+</html>

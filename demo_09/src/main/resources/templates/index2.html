@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <!--条件判断-->
+    <span th:if="${sex} == '男'">
+        性别：男
+    </span>
+    <span th:if="${sex} == '女'">
+        性别：女
+    </span>
+    <hr/>
+    <!--选择判断-->
+    <div th:switch="${id}">
+        <span th:case="1">ID:1</span>
+        <span th:case="2">ID:2</span>
+        <span th:case="3">ID:3</span>
+        <span th:case="4">ID:4</span>
+    </div>
+</body>
+</html>

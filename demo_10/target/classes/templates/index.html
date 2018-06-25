@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thymeleaf-URL</title>
+</head>
+<body>
+    <a th:href="@{http://www.baidu.com}">绝对路径1</a>
+    <a href="http://www.baidu.com">绝对路径2</a>
+    <hr/>
+
+    <!--相对于项目上下文的相对路径-->
+    <a th:href="@{/show}">相对路径</a>
+    <hr/>
+    <!--相对与服务器路径的根-->
+    <a th:href="@{~project2/resourcename}">相对与服务器的根</a>
+    <hr/>
+
+    <a th:href="@{/show(id=1,name=sunxiaozhe)}">相对路径-传参</a>
+</body>
+</html>
